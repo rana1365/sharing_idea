@@ -14,4 +14,7 @@ class Idea extends Model
         'content',
         'likes',
     ];
+    /**
+     * @var mixed|object
+     */
 }
