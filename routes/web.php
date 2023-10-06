@@ -32,5 +32,8 @@ Route::post('/ideas/{idea}/comments', [CommentController::class, 'store'])->name
 
 Route::get('/terms', function () {
     return view('terms');
-
 });
+
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/register', [AuthController::class, 'store']);
