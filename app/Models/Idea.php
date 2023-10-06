@@ -17,4 +17,10 @@ class Idea extends Model
     /**
      * @var mixed|object
      */
+
+    //function for relation between idea and comments
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
