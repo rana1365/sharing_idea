@@ -11,9 +11,11 @@ class Idea extends Model
 
 
     protected $fillable = [
+        'user_id',
         'content',
         'likes',
     ];
+
     /**
      * @var mixed|object
      */
@@ -22,5 +24,9 @@ class Idea extends Model
 
     public function comments(){
         return $this->hasMany(Comment::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }

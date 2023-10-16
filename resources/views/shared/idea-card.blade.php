@@ -2,10 +2,11 @@
     <div class="px-3 pt-4 pb-2">
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img style="width:50px" class="me-2 avatar-sm rounded-circle"
-                     src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt="Mario Avatar">
+                <img style="width:50px" class="me-2 avatarlo-sm rounded-circle"
+                     src="{{ $idea->user->getImageURL() }}"
+                     alt="{{ $idea->user->name }}">
                 <div>
-                    <h5 class="card-title mb-0"><a href="#"> Mario</a>
+                    <h5 class="card-title mb-0"><a href="{{ route('users.show', $idea->user->id) }}"> {{ $idea->user->name }}</a>
                     </h5>
                 </div>
             </div>
@@ -15,7 +16,7 @@
                     @method('delete')
                     <a class="mx-1" href=" {{ route('ideas.edit', $idea->id) }}">Edit</a>
                     <a href=" {{ route('ideas.show', $idea->id) }}">View</a>
-                    <button class="ms-1 btn btn-danger btn-sm"> x </button>
+                    <button type="submit" class="ms-1 btn btn-danger btn-sm"> x </button>
                 </form>
             </div>
         </div>
