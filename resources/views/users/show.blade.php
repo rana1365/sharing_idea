@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.app')
 
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
             @include('shared.success-message')
 
             <div class="mt-3">
-                @include('shared.user-card')
+                @include('users.shared.user-card')
             </div>
 {{--            <hr>--}}
             @forelse( $ideas as $idea)

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeedController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\IdeaLikeController;
@@ -68,6 +69,9 @@ Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
 
+Route::get('/feed', FeedController::class)->middleware('auth')->name('feed');
+
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::post('/register', [AuthController::class, 'store']);
@@ -87,7 +91,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 |
 |
 */
-Route::resource('users', UserController::class)->only('show', 'edit', 'update')->middleware('auth');
+
+Route::resource('users', UserController::class)->only('show');
+
+Route::resource('users', UserController::class)->only( 'edit', 'update')->middleware('auth');
 
 Route::get('profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
 

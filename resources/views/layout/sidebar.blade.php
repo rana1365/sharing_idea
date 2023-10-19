@@ -11,7 +11,7 @@
                         <span>Explore</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class=" {{ (Route::is('feed')) ? 'text-white bg-primary rounded' : '' }} nav-link" href="{{ route('dashboard') }}">
                         <span>Feed</span></a>
                 </li>
                 <li class="nav-item">
